@@ -1,0 +1,107 @@
+
+.transaction-form {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+.transaction-form input,.transaction-form select  {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background-color: #334155 !important;
+  color: #ffffff !important;
+  padding: 12px 16px !important;
+  border-radius: 10px !important;
+  font-size: 15px !important;
+  outline: none !important;
+  transition: border-color 0.2s ease !important;
+}
+
+.transaction-form input:focus {
+  border-color: #3b82f6 !important;
+}
+
+.type-btn {
+  flex: 1 !important;
+  padding: 12px !important;
+  border-radius: 10px !;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  border: 2px solid #334155 !important;
+  background-color: transparent !important;
+  color: #94a3b8 !important;
+  transition: all 0.2s ease !important;
+}
+
+.type-switcher {
+  display: flex !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin: 4px 0 !important;
+}
+
+.income-btn.active {
+  background-color: rgba(16, 185, 120, 0.15) !important;
+  border-color: #10b981 !important;
+  color: #10b981 !important;
+}
+
+.expense-btn.active {
+  background-color: rgba(16, 185, 120, 0.15) !important;
+  border-color: #f43f5e !important;
+  color: #f43f5e !important;
+}
+
+.submit-btn {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+  padding: 14px !important;
+  border-radius: 10px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  transition: background-color 0.2s ease , transform 0.1s ease !important;
+  margin-top: 8px !important;
+}
+
+.submit-btn:hover {
+  background-color: #2563eb !important;
+}
+
+.submit-btn:active {
+  transform: scale(0.98) !important;
+}
+
+.transaction-form div[class*="control"],
+.transaction-form [className*="select"],
+.transaction-form select,div:has(> select) {
+  background-color: #0b0f19 !important;
+  background: #0b0f19 !important;
+  border: 2px solid #334155 !important;
+  border-radius: 10px !important;
+  color: #ffffff;
+}
+
+.transaction-form div[class*="singleValue"],
+.transaction-form [class*= "placeholder"],
+.transaction-form span, .transaction-form option {
+  color: #ffffff;
+}
+
+.recent-transactions input,div:has(.search-transactions) input,
+.dashboard input[placeholder*="Search"] {
+  background-color: #1e293b !important;
+  border: 1px solid #334155 !important;
+  color: #ffffff !important;
+  padding: 12px 16px !important;
+  border-radius: 10px !important;
+}
