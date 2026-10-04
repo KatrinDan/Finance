@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 import {db, auth } from "../services/firebase.ts"
-import CategorySelect from "./CategorySelect.js";
+import CategorySelect from "./CategorySelect";
 import "../components/AddTransaction.css";
 
 type AddTransactionProps = {

@@ -1,13 +1,13 @@
-import AddTransaction from "../components/AddTransaction.js";
-import TransactionList from "../components/TransactionList.js";
+import AddTransaction from "../components/AddTransaction";
+import TransactionList from "../components/TransactionList";
 import "./Dashboard.css";
-import StateCards from "../components/StateCards.js";
+import StateCards from "../components/StateCards";
 import { useEffect, useState } from "react";
-import { auth, db } from "../services/firebase.js";
+import { auth, db } from "../services/firebase";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import Chart from "../components/Chart.js";
+import Chart from "../components/Chart";
 import { FaDollarSign, FaCalendar } from "react-icons/fa";
 
 function Dashboard() {
