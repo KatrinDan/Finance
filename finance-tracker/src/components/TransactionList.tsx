@@ -12,7 +12,15 @@ import categories from "../data/categories";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import "../components/TransactionList.css";
 
-function TransactionList({transactions = []}) {
+type Transaction = {
+  id: string;
+  title: string;
+  category: string;
+  type: "income" | "expense";
+  amount: number | string;
+};
+
+function TransactionList({ transactions = [] }: { transactions?: Transaction[] }) {
     const [search, setSearch] = useState("");
     const [filter, setFilter] = useState("all");
 
@@ -84,7 +92,7 @@ const getCategoryIcon = (categoryName) => {
               <p>No transactions found.</p>
             </div>
           ) : (
-            filteredTransactions.map((item) => {
+            filteredTransactions.map((item :any) => {
             const Icon = getCategoryIcon(item.category);
 
             return (

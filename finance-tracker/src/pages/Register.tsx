@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { register } from "../features/auth/authService";
 import { Link, useNavigate } from "react-router-dom";
 import { FaCheckCircle, FaEnvelope, FaLock, FaEyeSlash, FaChartLine } from "react-icons/fa";
@@ -12,7 +12,7 @@ export default function Register() {
 
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
 

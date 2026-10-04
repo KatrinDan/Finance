@@ -1,16 +1,26 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 import {db, auth } from "../services/firebase.ts"
-import CategorySelect from "./CategorySelect.jsx";
+import CategorySelect from "./CategorySelect.js";
 import "../components/AddTransaction.css";
 
-function AddTransaction({addTransaction}) {
+type AddTransactionProps = {
+  addTransaction: (transaction: {
+    title: string;
+    amount: number;
+    category: string;
+    type: string;
+    uid: string;
+  }) => void;
+};
+
+function AddTransaction({ addTransaction }: AddTransactionProps) {
     const [ title, setTitle ] = useState("");
     const [ amount, setAmount] = useState("");
     const [category, setCategory] = useState("");
     const [type, setType] = useState("expense");
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
           e.preventDefault();
 
         if (!title || !amount || !category) {
@@ -25,25 +35,31 @@ function AddTransaction({addTransaction}) {
 
         try{
           console.log({ title, amount, category, type,});
-          await addDoc(collection(db, "transactions"),{
+          const transaction = {
             title,
             amount:Number(amount),
             category,
             type,
             uid:auth.currentUser.uid,
             createdAt:serverTimestamp(),
-          });
+          };
+          await addDoc(collection(db, "transactions"), transaction);
+          addTransaction({ title, amount: Number(amount), category, type, uid: auth.currentUser.uid });
 
           alert("Transaction added successfully!");
 
           setTitle("");
           setAmount("");
           setCategory("");
-        } catch(error) {
-          console.error( error );
-          alert(error.message);
+        } catch (error: unknown) {
+          console.error(error);
+          if (error instanceof Error) {
+            alert(error.message);
+            return;
+          }
+          alert("An unknown error occurred");
         }
-          };
+      };
 
     return (
       <div>

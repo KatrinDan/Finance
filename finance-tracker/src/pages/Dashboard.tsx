@@ -1,13 +1,13 @@
-import AddTransaction from "../components/AddTransaction.jsx";
-import TransactionList from "../components/TransactionList.jsx";
+import AddTransaction from "../components/AddTransaction.js";
+import TransactionList from "../components/TransactionList.js";
 import "./Dashboard.css";
-import StateCards from "../components/StateCards.jsx";
+import StateCards from "../components/StateCards.js";
 import { useEffect, useState } from "react";
 import { auth, db } from "../services/firebase.js";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import Chart from "../components/Chart.jsx";
+import Chart from "../components/Chart.js";
 import { FaDollarSign, FaCalendar } from "react-icons/fa";
 
 function Dashboard() {
@@ -23,7 +23,7 @@ function Dashboard() {
     const addTransaction = (transaction) => {
         setTransactions((prevTransactions) => [...prevTransactions, transaction]);
     };
-    const [transactions, setTransactions] = useState([]);
+    const [transactions, setTransactions] = useState<{ id: string; type: string; [key: string]: any }[]>([]);
     const [loading, setLoading] = useState(true);
 
 useEffect(() => {
@@ -71,12 +71,12 @@ const today = new Date().toLocaleDateString("en-GB", {
 });
 
 const income = transactions
-    .filter(t => t.type === "income") 
-    .reduce((sum, t) => sum + Number(t.amount), 0);
+    .filter((t: any) => t.type === "income") 
+    .reduce((sum, t: any) => sum + Number(t.amount), 0);
 
     const expense = transactions
-    .filter(t => t.type ==="expense") 
-    .reduce((sum, t) => sum + (Number(t.amount)), 0);
+    .filter((t: any) => t.type ==="expense") 
+    .reduce((sum, t: any) => sum + (Number(t.amount)), 0);
 
     return (
         <div className="dashboard">
@@ -101,14 +101,14 @@ const income = transactions
            {loading ? (
             <div className="loading">Loading transactions...</div>
             ) : (
-             <StateCards transactions={transactions}/> )}
+             <StateCards transactions={transactions as never[]}/> )}
 
             <Chart income={income}
             expense={expense}/>
 
             <AddTransaction addTransaction={addTransaction} />
 
-            <TransactionList transactions={transactions} />
+            <TransactionList transactions={transactions as never[]} />
         </div>
     );
 }

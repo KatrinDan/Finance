@@ -44,7 +44,7 @@ const options = {
       <h2>Financial Overview</h2>
       <div className="chart-wrapper">
         <Pie data={data} 
-        options={options}/>
+        options={options as any}/>
       </div>
     </div>
   );

@@ -3,18 +3,18 @@ import "./StateCards.css";
 
 function StateCards({ transactions = [] }) {
     console.log( "StateCards transactions:", transactions);
-    console.log(transactions.map(t => (({
+    console.log(transactions.map((t:any) => (({
         title: t.title,
         type: t.type,
         amount: t.amount,
     }))));
     const income = transactions
-        .filter((t) => t.type === "income")
-        .reduce((sum, t) => sum + Number(t.amount), 0);
+        .filter((t:any) => t.type === "income")
+        .reduce((sum, t:any) => sum + Number(t.amount), 0);
 
     const expense = transactions
-        .filter((t) => t.type === "expense")
-        .reduce((sum, t) => sum + Number(t.amount), 0);
+        .filter((t:any) => t.type === "expense")
+        .reduce((sum, t:any) => sum + Number(t.amount), 0);
 
     const balance = income - expense;
 
