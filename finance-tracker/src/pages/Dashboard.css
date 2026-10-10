@@ -189,7 +189,7 @@ body {
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: bacsground 0.2s ;
+  transition: background 0.2s ;
 }
 
 .add-transaction-btn:hover {
@@ -216,4 +216,69 @@ body {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 10px rgb(0, 0, 0, 0.05);
+}
+
+@media (max-width:767px) {
+  .dashboard {
+    padding: 12px;
+    gap: 16px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .header-left {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .header-right {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .current-date {
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .logout-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 12px !important;
+  }
+
+  .financial-overview {
+    padding: 16px;
+  }
+
+  .add-transaction-form {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .type-buttons-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .type-buttons-container button {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .add-transaction-item {
+    padding: 12px;
+    font-size: 14px;
+  }
 }

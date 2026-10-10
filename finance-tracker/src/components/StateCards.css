@@ -33,6 +33,10 @@
     font-weight: 700;
 }
 
+.balance h2 {
+    color: #fff;
+}
+
 .income h2 {
     color: #22c55e;
 }
@@ -41,13 +45,44 @@
     color: #ef4444;
 }
 
-@media (min-width:768) {
+@media (min-width:768px) {
     .stats-cards {
+        display: flex;
+        gap: 20px;
         flex-direction: row;
         justify-content: space-between;
     }
 
     .stat-card {
         width: 31%;
+    }
+}
+
+@media (max-width:767px) {
+    .stats-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .stat-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 16px;
+        margin: 0;
+        border-radius: 20px;
+    }
+
+    .stat-card h4 {
+        font-size: 14px;
+        margin-bottom: 8pxx;
+    }
+
+    .stat-card h2 {
+       font-size: 22px;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
     }
 }

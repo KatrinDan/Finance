@@ -20,7 +20,7 @@ function StateCards({ transactions = [] }) {
 
     return (
         <div className="stats-cards">
-            <div className="stat-card">
+            <div className="stat-card balance">
                 <h4>Balance</h4>
                 <h2>${balance}</h2>
             </div>
