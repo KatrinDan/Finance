@@ -1,7 +1,9 @@
 .chart-card {
   background: white;
-  border-radius: 20px;
-  padding: 24px;
+  border-radius: 18px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 16px;
   margin-top: 30px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
@@ -13,7 +15,9 @@
 }
 
 .chart-wrapper {
+  position: relative;
   height: 280px;
-  width: 280px;
-  margin: auto;
+  width: 180%;
+  max-width: 360px;
+  margin: 0 auto;
 }

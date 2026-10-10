@@ -3,10 +3,10 @@
   background: #1e293b !important;
   border: 1px solid #334155 !important;
   border-radius: 16px !important;
-  padding: 24px !important;
+  padding: 16px !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 16px !important;
+  gap: 12px !important;
   width: 100% !important;
   box-sizing: border-box;
 }
@@ -42,7 +42,7 @@
 
 .type-switcher {
   display: flex !important;
-  gap: 12px !important;
+  gap: 8px !important;
   width: 100% !important;
   margin: 4px 0 !important;
 }
@@ -57,6 +57,10 @@
   background-color: rgba(16, 185, 120, 0.15) !important;
   border-color: #f43f5e !important;
   color: #f43f5e !important;
+}
+
+.type-switcher button {
+  flex: 1;
 }
 
 .submit-btn {
@@ -85,6 +89,8 @@
 .transaction-form [className*="select"],
 .transaction-form select,div:has(> select) {
   background-color: #0b0f19 !important;
+  width: 100%;
+  box-sizing: border-box;
   background: #0b0f19 !important;
   border: 2px solid #334155 !important;
   border-radius: 10px !important;
@@ -99,9 +105,18 @@
 
 .recent-transactions input,div:has(.search-transactions) input,
 .dashboard input[placeholder*="Search"] {
+  width: 100%;
+  box-sizing: border-box;
   background-color: #1e293b !important;
   border: 1px solid #334155 !important;
   color: #ffffff !important;
   padding: 12px 16px !important;
   border-radius: 10px !important;
+}
+
+@media (min-width:768px) {
+  .transaction-form {
+    flex-direction: row;
+    align-items: center;
+  }
 }

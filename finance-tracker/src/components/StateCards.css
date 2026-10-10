@@ -1,14 +1,19 @@
 .stats-cards {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    flex-direction: column;
     margin-bottom: 30px;
 }
 
 .stat-card {
+    width: 100%;
     background: #fff;
-    padding: 23px;
-    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 18px;
     min-height: 140px;
     box-shadow: 0 10px 25px rgb(0, 0, 0, 0.8);
     transition: .3s;
@@ -34,4 +39,15 @@
 
 .expense h2 {
     color: #ef4444;
+}
+
+@media (min-width:768) {
+    .stats-cards {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .stat-card {
+        width: 31%;
+    }
 }
