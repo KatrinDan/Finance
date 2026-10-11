@@ -191,3 +191,28 @@
     to {
         transform: translateX(0); opacity: 1; }
 }
+
+@media (max-width:480px) {
+    .login-page {
+     padding: 20px;
+    }
+
+    .login-card {
+        padding: 30px 20px;
+    }
+
+    .header-icon {
+        font-size: 2rem;
+    }
+
+    .card-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .toast-success {
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        width: auto;
+    }
+}
